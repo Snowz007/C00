@@ -1,19 +1,29 @@
 #include <unistd.h>
 
-char c;
-
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-  c = nb / 10 + '0';
-  write(1, &c, 1);
-  c = nb % 10 + '0';
-  write(1, &c, 1);
-  }
+	char	n;
 
-int main(void)
+	if (nb > 0)
+	{
+		ft_putnbr(nb / 10);
+		n = '0' + (nb % 10);
+		write(1, &n, 1);
+	}
+	else if (nb < 0)
+	{
+		write(1, "-", 1);
+		ft_putnbr(nb = -nb);
+	}
+	else
+	{
+		write(1, "0", 1);
+	}
+}
+
+int	main(void)
 {
-
-ft_putnbr(42);
-write(1, "\n", 1);
-return 0;
+	ft_putnbr(0);
+	write(1, "\n", 1);
+	return (0);
 }
