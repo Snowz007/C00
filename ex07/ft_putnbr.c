@@ -15,10 +15,6 @@ void	ft_putnbr(int nb)
 		write(1, "-", 1);
 		ft_putnbr(nb = -nb);
 	}
-	else
-	{
-		write(1, "0", 1);
-	}
 }
 
 int	main(void)
